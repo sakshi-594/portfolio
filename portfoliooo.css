@@ -1,17 +1,19 @@
-/* Global Reset */
+/* 🌑 GLOBAL STYLES */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
-}
-
-body {
-  line-height: 1.6;
   scroll-behavior: smooth;
 }
 
-/* Navbar */
+body {
+  background-color: #000;
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* 🌸 NAVBAR */
 header {
   width: 100%;
   position: fixed;
@@ -38,6 +40,8 @@ nav {
 .nav-links {
   list-style: none;
   display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
 }
 
 .nav-links li {
@@ -69,7 +73,7 @@ nav {
   transition: 0.3s;
 }
 
-/* Home Section */
+/* 🌸 HOME SECTION */
 .home-section {
   height: 100vh;
   background: url('bg.jpg') no-repeat center center/cover;
@@ -78,10 +82,11 @@ nav {
   align-items: center;
   color: #fff;
   text-align: center;
+  padding: 0 5%;
 }
 
 .home-content h1 {
-  font-size: 3rem;
+  font-size: clamp(2rem, 5vw, 3.5rem);
 }
 
 .home-content .typed-text {
@@ -96,6 +101,7 @@ nav {
   text-decoration: none;
   border-radius: 5px;
   transition: all 0.3s;
+  display: inline-block;
 }
 
 .btn:hover {
@@ -119,6 +125,7 @@ nav {
   gap: 50px;
   max-width: 1200px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .about-image img {
@@ -136,59 +143,35 @@ nav {
 
 .about-content {
   flex: 1;
+  min-width: 280px;
+  text-align: left;
 }
 
 .about-content h2 {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 4vw, 2.5rem);
   margin-bottom: 10px;
   color: #bb86fc;
 }
 
 .about-content h3 {
-  font-size: 1.8rem;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
   margin-bottom: 20px;
 }
 
 .about-content p {
-  font-size: 1rem;
+  font-size: clamp(0.95rem, 2vw, 1rem);
   line-height: 1.7;
   margin-bottom: 15px;
   color: #ddd;
 }
 
-.btn {
-  display: inline-block;
-  background: #6a1b9a;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: background 0.3s ease;
-}
-
-.btn:hover {
-  background: #bb86fc;
-}
-
-/* 📱 RESPONSIVE */
-@media (max-width: 900px) {
-  .about-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .about-image img {
-    width: 250px;
-    height: 280px;
-  }
-}
-
+/* Resume Buttons */
 .resume-buttons {
   margin-top: 25px;
   display: flex;
   gap: 15px;
   flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 .resume-buttons .btn,
@@ -225,7 +208,6 @@ nav {
   transform: translateY(-2px);
 }
 
-
 /* 🌸 SKILLS SECTION */
 .skills {
   background-color: #0a0a0a;
@@ -235,7 +217,7 @@ nav {
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 5vw, 2.5rem);
   color: #bb86fc;
   margin-bottom: 10px;
 }
@@ -243,7 +225,7 @@ nav {
 .section-subtitle {
   color: #ccc;
   margin-bottom: 50px;
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
 .skills-container {
@@ -287,21 +269,9 @@ nav {
   padding: 80px 10%;
 }
 
-.projects-section .section-title {
-  font-size: 2.5rem;
-  color: #9c27b0;
-  margin-bottom: 10px;
-}
-
-.projects-section .section-subtitle {
-  color: #ccc;
-  margin-bottom: 50px;
-  font-size: 1rem;
-}
-
 .projects-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
   justify-items: center;
 }
@@ -312,6 +282,7 @@ nav {
   overflow: hidden;
   transition: all 0.4s ease;
   box-shadow: 0 0 15px rgba(156, 39, 176, 0.2);
+  max-width: 100%;
 }
 
 .project-card img {
@@ -342,28 +313,12 @@ nav {
   margin-bottom: 15px;
 }
 
-.project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0 30px rgba(156, 39, 176, 0.5);
-}
-
 /* 💌 CONTACT SECTION */
 .contact-section {
   background-color: #0a0a0a;
   color: #fff;
   text-align: center;
   padding: 100px 10%;
-}
-
-.contact-section .section-title {
-  font-size: 2.5rem;
-  color: #9c27b0;
-  margin-bottom: 10px;
-}
-
-.contact-section .section-subtitle {
-  color: #ccc;
-  margin-bottom: 50px;
 }
 
 .contact-container {
@@ -373,13 +328,17 @@ nav {
   gap: 50px;
 }
 
-.contact-form {
+.contact-form,
+.contact-info {
   flex: 1;
   min-width: 300px;
   background: rgba(255, 255, 255, 0.05);
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 0 20px rgba(156, 39, 176, 0.2);
+}
+
+.contact-form {
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -403,16 +362,6 @@ nav {
   box-shadow: 0 0 10px rgba(156, 39, 176, 0.4);
 }
 
-.contact-info {
-  flex: 1;
-  min-width: 250px;
-  text-align: left;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 0 20px rgba(156, 39, 176, 0.2);
-}
-
 .contact-info p {
   margin-bottom: 15px;
   display: flex;
@@ -426,34 +375,42 @@ nav {
   font-size: 1.2rem;
 }
 
-/* 🌸 Responsive */
-@media (max-width: 768px) {
-  .projects-container {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .contact-info {
-    text-align: center;
-  }
-}
-
-
-
-
-/* Footer */
+/* 🌸 FOOTER */
 footer {
   text-align: center;
   padding: 20px;
   background: #2b2b2b;
   color: #fff;
+  font-size: 0.9rem;
 }
 
-/* Responsive */
+/* 🌸 RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+  nav {
+    padding: 15px 5%;
+  }
+}
+
+@media (max-width: 900px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image img {
+    width: 250px;
+    height: 280px;
+  }
+
+  .about-content {
+    text-align: center;
+  }
+
+  .resume-buttons {
+    justify-content: center;
+  }
+}
+
 @media (max-width: 768px) {
   .nav-links {
     display: none;
@@ -475,14 +432,45 @@ footer {
     display: flex;
   }
 
-  .skills-container, 
-  .projects-container, 
+  .home-content h1 {
+    font-size: 2rem;
+  }
+
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
+
   .contact-container {
     flex-direction: column;
     align-items: center;
   }
 
-  .home-content h1 {
-    font-size: 2.2rem;
+  .contact-info {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn, .btn-outline {
+    width: 100%;
+    text-align: center;
+  }
+
+  .resume-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-image img {
+    width: 200px;
+    height: 240px;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .project-info h3 {
+    font-size: 1.2rem;
   }
 }
